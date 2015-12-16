@@ -75,7 +75,7 @@ void handleRoot() {
 
 	snprintf ( temp, 400,
 
-"<html>\
+((String("<html>\
   <head>\
     <meta http-equiv='refresh' content='5'/>\
     <title>ESP8266 Demo</title>\
@@ -86,9 +86,14 @@ void handleRoot() {
   <body>\
     <h1>Hello from ESP8266!</h1>\
     <p>Uptime: %02d:%02d:%02d</p>\
-    <img src=\"/test.svg\" />\
+    <form action=\"http://"))+(String(WiFi.localIP()))+(String("/setColor\" method=\"GET\">\
+      <label for=\"rVal\">Intensidad rojo (0-255): </label><input type=\"text\" name=\"rVal\" value=\"0\"/><br />\
+      <label for=\"gVal\">Intensidad verde (0-255): </label><input type=\"text\" name=\"gVal\" value=\"0\"/><br />\
+      <label for=\"bVal\">Intensidad azul (0-255): </label><input type=\"text\" name=\"bVal\" value=\"0\"/><br />\
+      <input type=\"submit\" value=\"Cambiar color\" />\
+    </form>\
   </body>\
-</html>",
+</html>")),
 
 		hr, min % 60, sec % 60
 	);
