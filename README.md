@@ -51,14 +51,19 @@ A detailed tutorial (in Spanish) can be found at http://blog.teubi.co/
 TeUbi.co is an electronic component store based in El Salvador, a small but beautiful country in Central Americas.
 
 To find more proyects like this you can follow us on any (or all) of this social networks:
+
 https://www.facebook.com/tiendateubico
+
 https://www.instagram.com/teubico
+
 http://blog.teubi.co/
+
 https://twitter.com/teubico
 
 ## Copyrights
 IoT LED Stripe Controller v0.1
 Copyright 2015. Mario Gómez <em>mario -dot- gomez -at- teubi.co</em>
+
 http://blog.teubi.co
 
 For source files if not specified on the header:
