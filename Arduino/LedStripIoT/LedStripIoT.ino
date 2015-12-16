@@ -44,6 +44,7 @@
 #define PW "nohayinternet"
 
 /* Cambia la configuración IP de tu red local */
+#define LOCALIP "192.168.0.226" // String for the local server configuration
 IPAddress ip_addr(192,168,0,126); //Requested static IP address for the ESP
 IPAddress gw(192,168,0,1); // IP address for the Wifi router
 IPAddress netmask(255,255,255,0);
@@ -72,14 +73,14 @@ Adafruit_NeoPixel strip = Adafruit_NeoPixel(60, PIN, NEO_GRB + NEO_KHZ800);
 
 void handleRoot() {
 	digitalWrite ( led, 1 );
-	char temp[400];
+	char temp[800];
 	int sec = millis() / 1000;
 	int min = sec / 60;
 	int hr = min / 60;
 
-	snprintf ( temp, 400,
+	snprintf ( temp, 778,
 
-((String("<html>\
+"<html>\
   <head>\
     <meta http-equiv='refresh' content='5'/>\
     <title>ESP8266 Demo</title>\
@@ -90,14 +91,14 @@ void handleRoot() {
   <body>\
     <h1>Hello from ESP8266!</h1>\
     <p>Uptime: %02d:%02d:%02d</p>\
-    <form action=\"http://"))+(String(WiFi.localIP()))+(String("/setColor\" method=\"GET\">\
+    <form action=\"http://" LOCALIP "/setColor\" method=\"GET\">\
       <label for=\"rVal\">Intensidad rojo (0-255): </label><input type=\"text\" name=\"rVal\" value=\"0\"/><br />\
       <label for=\"gVal\">Intensidad verde (0-255): </label><input type=\"text\" name=\"gVal\" value=\"0\"/><br />\
       <label for=\"bVal\">Intensidad azul (0-255): </label><input type=\"text\" name=\"bVal\" value=\"0\"/><br />\
       <input type=\"submit\" value=\"Cambiar color\" />\
     </form>\
   </body>\
-</html>")),
+</html>",
 
 		hr, min % 60, sec % 60
 	);

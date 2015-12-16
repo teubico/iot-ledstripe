@@ -7,7 +7,7 @@ The project is just a proof-of-concept to demonstrate the capabilities of the ES
 We tried to include all the basic pieces to build and run this project. This are the project folders an it's contents:
 
 1. *Arduino*: Contains the sketch used with the ESP8266. The sketch sets-up a small web server and also controls the LED stripe.
-2. *AppInventor*: Includes the MIT's App Inventor project file that you can use as a template to control the LED stripe from.
+2. *AppInventor*: Includes the MIT's App Inventor project file that you can use as a template to control the LED stripe from Android.
 3. *Fritzing*: This contains a fritzing project to help you to connect all the pieces together.
 
 ## Materials (BOM)
@@ -16,6 +16,7 @@ To build this project you'll need at least this components:
 * Voltage Level Converter
 * 3.3V linear Regulator
 * 5V@4A voltage source
+* WS2811 RGB LED stripe.
 
 To program the ESP8266 you'll also need:
 * FTDI USB<->Serial converter working at 3.3V
@@ -29,6 +30,7 @@ To program the ESP8266 you'll also need:
 #define PW "nohayinternet" // Password (between quotes)
 
 /* Cambia la configuración IP de tu red local */
+#define LOCALIP "192.168.0.226" // String for the local server configuration 
 IPAddress ip_addr(192,168,0,126); // Static IP to use
 IPAddress gw(192,168,0,1); // Default gateway
 IPAddress netmask(255,255,255,0); // Netmask
@@ -54,11 +56,18 @@ For source files if not specified on the header:
 IoT LED Stripe Controller v0.1
 Copyright 2015. Mario Gómez <mario _dot_ gomez -at- teubi.co>
     
-    This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 2 of the License.
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 2 of the License.
 
-    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+    This program is distributed in the hope that it will be useful, but 
+    WITHOUT ANY WARRANTY; without even the implied warranty of 
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU 
+    General Public License for more details.
 
-    You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    You should have received a copy of the GNU General Public License 
+    along with this program.  If not, see 
+    <http://www.gnu.org/licenses/>.
 ```
 
 For design files (EAGLE, Fritzing, MIT App Inventor project files, images and renders):
@@ -71,16 +80,28 @@ Summary:
 
 You are free to:
     Share — copy and redistribute the material in any medium or format.
-    Adapt — remix, transform, and build upon the material for any purpose, even commercially.
-    The licensor cannot revoke these freedoms as long as you follow the license terms.
+    Adapt — remix, transform, and build upon the material for any
+    purpose, even commercially.
+    The licensor cannot revoke these freedoms as long as you follow the
+    license terms.
 
 Under the following terms:
-    Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
-    No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+    Attribution — You must give appropriate credit, provide a link to
+    the license, and indicate if changes were made. You may do so in any
+    reasonable manner, but not in any way that suggests the licensor
+    endorses you or your use.
+    No additional restrictions — You may not apply legal terms or
+    technological measures that legally restrict others from doing
+    anything the license permits.
 
 Notices:
-    You do not have to comply with the license for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation.
-    No warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.
+    You do not have to comply with the license for elements of the
+    material in the public domain or where your use is permitted by an
+    applicable exception or limitation.
+    No warranties are given. The license may not give you all of the
+    permissions necessary for your intended use. For example, other
+    rights such as publicity, privacy, or moral rights may limit how you
+    use the material.
 
 Full License: https://creativecommons.org/licenses/by/3.0/us/legalcode
 ```
