@@ -35,7 +35,7 @@ IPAddress ip_addr(192,168,0,126); // Static IP to use
 IPAddress gw(192,168,0,1); // Default gateway
 IPAddress netmask(255,255,255,0); // Netmask
 ```
-* Upload your Sketch to the ESP8266(*)
+* Upload your Sketch to the ESP8266, this Sketch also requires the Adafruit's NeoPixel library https://github.com/adafruit/Adafruit_NeoPixel (*)
 * Connect everything as shown on the Fritzing project file.
 * Install the App RemoteRGBTest.apk included on "AppInventor/binaries". If you don't trust me download the "aia" Project for MIT App Inventor and compile the APK from there
 * Power everything up and cross your fingers
